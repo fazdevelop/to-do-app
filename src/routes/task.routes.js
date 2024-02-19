@@ -4,16 +4,12 @@ const getAllTask = require('../controllers/task_read')
 const updateTask= require('../controllers/task_update')
 const deleteTask = require('../controllers/task_delete')
 
-router.get("/get-task", getAllTask)
+router.get("/get-task", getAllTask);
 
-router.post("/create-task", createTask)
+router.post("/create-task", createTask);
 
-router.put("/update-task", (req,res) => {
-    console.log('Testeando PUT');
-})
+router.put("/update-task/:id", updateTask);
 
-router.delete("/remove-task", (req, res) => {
-    console.log('Testeando DELETE');
-})
+router.delete("/remove-task/:id", deleteTask);
 
 module.exports = router;
